@@ -5,11 +5,9 @@ import { Table, Button } from 'reactstrap';
 function ExercisesList() {
   const [exercises, setExercises] = useState([]);
   useEffect(() => {
-    axios
-      .get('/exercises')
-      .then((res) => setExercises(res.data));
+    axios.get('/exercises').then((res) => setExercises(res.data));
   }, []);
-
+  console.log(exercises);
   function handleDelete(id) {
     axios
       .delete('/exercises/' + id)
